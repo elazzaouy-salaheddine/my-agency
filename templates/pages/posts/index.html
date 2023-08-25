@@ -1,0 +1,51 @@
+{% extends "pages/master_page.html" %} 
+{% load static %}
+{% block title %}  BLOG POSTS  {% endblock %} 
+
+
+{% block content %}
+
+
+
+        <div class="blog-page">
+            <div class="container">
+                <div class="row">
+                {% for post in posts %}
+                
+                
+                    <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="100ms">
+                        <div class="blog-one__item">
+                            <div class="blog-one__image">
+                                <img src="{{post.coverimage.url}}" alt="{{post.title}}">
+                                <a href="{% url "blog:postdetails" post.id %}"></a>
+                                <div class="blog-one__date">
+                                    <span>{{post.published|date:"j"}}</span>
+                                    {{post.published|date:"N-Y"}}
+                                </div><!-- /.blog-date -->
+                            </div><!-- /.blog-image -->
+                            <div class="blog-one__content">
+                                <div class="blog-one__meta">
+                                    <div class="blog-one__meta__author">
+                                        <div class="blog-one__meta__thumb"><img src="assets/images/blog/author-1.png" alt="nisoz" /></div>
+                                        by<br><a href="blog-list-right.html">{{post.author.first_name}} {{post.author.last_name}}</a>
+                                    </div>
+                                    <div>
+                                    <span class="fas fa-comments"></span>2 Comments
+                                    </div>
+                                </div><!-- /.blog-meta -->
+                                <h3 class="blog-one__title">
+                                    <a href="{% url "blog:postdetails" post.id %}">{{post.title}}</a>
+                                </h3><!-- /.blog-title -->
+                                <a href="{% url "blog:postdetails" post.id %}" class="nisoz-btn">
+                                    <span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span>
+                                    <span class="nisoz-btn__text">Read More<span class="icon-right-arrow"></span></span>
+                                </a><!-- /.blog-read-more -->
+                            </div><!-- /.blog-content -->
+                        </div><!-- /.blog-card-one -->
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+{% endblock %}
+

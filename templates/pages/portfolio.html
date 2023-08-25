@@ -1,0 +1,36 @@
+{% extends "pages/master_page.html" %} 
+{% load static %}
+{% block title %} our services  {% endblock %} 
+
+
+
+{% block content %}
+
+        <!-- Portfolio Start -->
+        <section class="portfolio-one portfolio-page">
+            <div class="container">
+                <div class="row nisoz-masonary">
+                    {% for data in projects %}.
+                    <div class="col-lg-4 col-md-6">
+                        <div class="portfolio-one__item">
+                            <div class="portfolio-one__thumb">
+                                <img src=" {{data.coverimage.url}}" alt="nisoz" />
+                            </div>
+                            <div class="portfolio-one__hover">
+                                <a class="portfolio-one__read-more" href="{% url "portfolio:projectdetails" data.id %}"><span class="icon-right-arrow"></span></a>
+                                <div class="portfolio-one__hover-bottom">
+                                    
+                                    <h3 class="portfolio-one__title"><a href="{% url "portfolio:projectdetails" data.id %}">{{ data.title }}</a></h3>
+                                </div>
+                            </div>
+                        </div><!-- folio-item -->
+                    </div>
+
+                    {% endfor %}
+                   
+                </div><!-- slider-end -->
+            </div>
+        </section>
+        <!-- Portfolio End -->
+
+{% endblock %}

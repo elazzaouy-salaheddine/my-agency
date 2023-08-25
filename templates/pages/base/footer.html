@@ -1,0 +1,62 @@
+ {% load static %}
+ <footer class="main-footer">
+            <div class="main-footer__bg" style="background-image: url(assets/images/shapes/footer-bg-1.png);"></div>
+            <div class="container">
+                <div class="main-footer__top wow fadeInUp" data-wow-delay="100ms">
+                    <a href="index.html" class="main-footer__logo">
+                        <img src="{% static 'assets/images/footer-logo.png' %} " alt="nisoz" width="96" height="34">
+                    </a><!-- /.footer-logo -->
+                    <div class="main-footer__social">
+                        <a href="https://twitter.com/"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.facebook.com/"><i class="fab fa-facebook"></i></a>
+                        <a href="https://www.pinterest.com/"><i class="fab fa-pinterest-p"></i></a>
+                        <a href="https://www.instagram.com/"><i class="fab fa-instagram"></i></a>
+                    </div><!-- /.footer-social -->
+                </div><!-- footer-top -->
+                <div class="row">
+                    <div class="col-lg-2 col-md-4 wow fadeInUp" data-wow-delay="200ms">
+                        <div class="main-footer__navmenu">
+                            <ul>
+                                <li><a href="{% url 'home_page:about' %}">About</a></li>
+                                <li><a href="team.html">Meet Our Team</a></li>
+                                <li><a href="{% url 'home_page:services' %}">What We Offer</a></li>
+                                <li><a href="{% url 'blog:posts' %}">Latest News</a></li>
+                            </ul><!-- /.list-unstyled -->
+                        </div><!-- /.footer-menu -->
+                    </div>
+                    <div class="col-lg-2 col-md-4 wow fadeInUp" data-wow-delay="300ms">
+                        <div class="main-footer__navmenu">
+                            <ul>
+                                <li><a href="{% url 'home_page:faqs' %}">Faqs</a></li>
+                                <li><a href="{% url 'home_page:contact' %}">Contact</a></li>
+                                <li><a href="{% url 'home_page:portfolio' %}">Recent Work</a></li>
+                            </ul><!-- /.list-unstyled -->
+                        </div><!-- /.footer-menu -->
+                    </div>
+                    <div class="col-lg-3 col-md-4 wow fadeInUp" data-wow-delay="400ms">
+                        <div class="main-footer__about">
+                            <p class="main-footer__about__text">36 broklyn golden street. New<br> York. USA</p>
+                            <ul class="main-footer__about__info">
+                                <li><span class="fas fa-phone-square"></span><a href="tel:+923680006800">+92 (3680) 00 - 6800</a></li>
+                                <li><span class="fas fa-envelope"></span><a href="mailto:needhelp@company.com">needhelp@company.com</a></li>
+                            </ul>
+                        </div><!-- /.footer-about -->
+                    </div>
+                    <div class="col-lg-5 col-md-12 wow fadeInUp" data-wow-delay="500ms">
+                        <div class="main-footer__newsletter">
+                            <h5 class="main-footer__newsletter__text">Subscribe to get latest updates on daily basis</h5>
+                            <form class="main-footer__email-box mc-form" data-url="MC_FORM_URL" novalidate="novalidate">
+                                <div class="main-footer__email-input-box">
+                                    <input type="email" placeholder="Email address" name="EMAIL">
+                                </div>
+                                <button type="submit" class="nisoz-btn">
+                                    <span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span>
+                                    <span class="nisoz-btn__text">Subscribe</span>
+                                </button>
+                            </form>
+                            <div class="mc-form__response"></div>
+                        </div><!-- /.footer-mailchimp -->
+                    </div>
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </footer><!-- /.main-footer -->

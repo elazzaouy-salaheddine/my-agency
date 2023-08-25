@@ -1,0 +1,134 @@
+{% extends "pages/master_page.html" %} 
+{% load static %}
+{% block title %}  BLOG POSTS  {% endblock %} 
+
+
+{% block content %}
+
+
+        <div class="blog-details">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-xl-8 col-lg-7">
+                        <div class="blog-details__content">
+                            <div class="blog-details__img">
+                                <img src="{{data.projectdetailimage.url}}" alt="{{data.title}}">
+                                <div class="blog-details__date">
+                                    <span>{{data.published|date:"j"}}</span>
+                                    {{data.published|date:"N-Y"}}
+                                </div>
+                            </div><!-- details-image -->
+                            <div class="blog-details__meta">
+                                <div class="blog-details__meta__cats">
+                                    <span class="fas fa-tags"></span><a href="blog-list-right.html">Design</a>
+                                </div>
+                                <span class="fas fa-comments"></span>2 Comments
+                            </div><!-- /.details-meta -->
+                            <h3 class="blog-details__title">{{data.title}}</h3><!-- details-tiele -->
+                            {{data.content|safe}}
+                        </div><!-- details-content -->
+                        <div class="blog-details__bottom">
+                            <div class="blog-details__tags">
+                                <h5 class="blog-details__tags__title">Tags</h5>
+                                <a href="blog-grid-left.html">{{data.category}}</a>
+                                
+                            </div>
+                            <div class="blog-details__social">
+                                <a href="https://www.google.com/"><i class="fab fa-twitter"></i></a>
+                                <a href="https://www.google.com/"><i class="fab fa-facebook"></i></a>
+                                <a href="https://www.google.com/"><i class="fab fa-pinterest-p"></i></a>
+                                <a href="https://www.google.com/"><i class="fab fa-instagram"></i></a>
+                            </div>
+                        </div><!-- details-tags-share -->
+                        <div class="blog-details__pagenation">
+                            <div class="blog-details__item">
+                                <div class="blog-details__item__img">
+                                    <img src="assets/images/blog/blog-details-pagenation-img-1.jpg" alt="">
+                                </div>
+                                <div class="blog-details__pagenation__content">
+                                    <p class="blog-details__pagenation__date"><span class="fa fa-clock"></span>20 Mar, 2023</p>
+                                    <h4 class="blog-details__pagenation__title"><a href="blog-details-left.html">Get deep knowledge of your audience</a></h4>
+                                </div>
+                            </div>
+                            <div class="blog-details__item blog-details__item-right">
+                                <div class="blog-details__pagenation__content">
+                                    <p class="blog-details__pagenation__date"><span class="fa fa-clock"></span>20 Mar, 2023</p>
+                                    <h4 class="blog-details__pagenation__title"><a href="blog-details-right.html">How to get ensure direct designing</a></h4>
+                                </div>
+                                <div class="blog-details__item__img">
+                                    <img src="assets/images/blog/blog-details-pagenation-img-2.jpg" alt="">
+                                </div>
+                            </div>
+                        </div><!-- details-pagination -->
+                        <div class="blog-details__comment">
+                            <h3 class="blog-details__comment__title">2 comments</h3>
+                            <div class="blog-details__comment__item">
+                                <div class="blog-details__comment__image">
+                                    <img src="assets/images/blog/comment-1-1.jpg" alt="nisoz">
+                                </div>
+                                <div class="blog-details__comment__content">
+                                    <h3 class="blog-details__comment__name">Kevin martin</h3>
+                                    <p class="blog-details__comment__text">
+                                        Mauris non dignissim purus, ac commodo diam. Donec sit amet lacinia
+                                        nulla. Aliquam quis purus in justo pulvinar tempor. Aliquam tellus
+                                        nulla, sollicitudin at euismod.
+                                    </p>
+                                    <a href="blog-details.html" class="nisoz-btn">
+                                        <span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span>
+                                        <span class="nisoz-btn__text">Reply</span>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="blog-details__comment__item">
+                                <div class="blog-details__comment__image">
+                                    <img src="assets/images/blog/comment-1-2.jpg" alt="nisoz">
+                                </div>
+                                <div class="blog-details__comment__content">
+                                    <h3 class="blog-details__comment__name">Sarah albert</h3>
+                                    <p class="blog-details__comment__text">
+                                        Mauris non dignissim purus, ac commodo diam. Donec sit amet lacinia
+                                        nulla. Aliquam quis purus in justo pulvinar tempor. Aliquam tellus
+                                        nulla, sollicitudin at euismod.
+                                    </p>
+                                    <a href="blog-details.html" class="nisoz-btn">
+                                        <span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span>
+                                        <span class="nisoz-btn__text">Reply</span>
+                                    </a>
+                                </div>
+                            </div>
+                        </div><!-- details-comment -->
+                        <div class="blog-details__comment-form">
+                            <h3 class="blog-details__comment-form__title">Leave a comment</h3>
+                            <form action="https://bracketweb.com/nisoz-html/assets/inc/sendemail.php" class="contact-form-validated" novalidate="novalidate">
+                                <div class="row">
+                                    <div class="col-xl-6">
+                                        <div class="blog-details__comment-form__input-box">
+                                            <input type="text" placeholder="Your name" name="name">
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-6">
+                                        <div class="blog-details__comment-form__input-box">
+                                            <input type="email" placeholder="Email address" name="email">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-xl-12">
+                                        <div class="blog-details__comment-form__input-box">
+                                            <textarea name="message" placeholder="Write  a comment"></textarea>
+                                        </div>
+                                        <button type="submit" class="nisoz-btn">
+                                            <span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span>
+                                            <span class="nisoz-btn__text">Submit Comment</span>
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                            <div class="result"></div>
+                        </div><!-- details-comment-form -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+{% endblock %}
