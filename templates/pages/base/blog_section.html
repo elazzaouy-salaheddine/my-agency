@@ -9,96 +9,45 @@
                                 <span class="section-title__triangle-left"></span>
                                 <span class="section-title__triangle-right"></span>
                             </div>
-                            <h5 class="section-title__tagline">From the Blog</h5>
+                            <h5 class="section-title__tagline">From the 2 Blog</h5>
                             <h2 class="section-title__title">News & articles</h2>
                         </div><!-- section-title -->
                     </div>
                 </div>
                 <div class="row">
+
+                {% for post in posts %}
+                
+                
                     <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
                         <div class="blog-one__item">
                             <div class="blog-one__image">
                                 <img src="{% static 'assets/images/blog/blog-1-1.jpg' %} " alt="Five ways that can develop your business">
                                 <a href="blog-details-right.html"></a>
                                 <div class="blog-one__date">
-                                    <span>30</span>
-                                    June, 2023
+                                    <span>{{post.published|date:"j"}}</span>
+                                    {{post.published|date:"N-Y"}}
                                 </div><!-- /.blog-date -->
                             </div><!-- /.blog-image -->
                             <div class="blog-one__content">
                                 <div class="blog-one__meta">
                                     <div class="blog-one__meta__author">
-                                        <div class="blog-one__meta__thumb"><img src="{% static 'assets/images/blog/author-1.png' %} " alt="nisoz" /></div>
-                                        by<br><a href="blog-list-right.html">Layerdrops</a>
+                                        <div class="blog-one__meta__thumb"><img src="{{post.coverimage.url}}" alt="{{post.title}}"/></div>
+                                        by<br><a href="{% url "blog:postdetails" post.id %}">Layerdrops</a>
                                     </div>
                                     <span class="fas fa-comments"></span>2 Comments
                                 </div><!-- /.blog-meta -->
                                 <h3 class="blog-one__title">
-                                    <a href="blog-details-right.html">Five ways that can develop your business</a>
+                                    <a href="{% url "blog:postdetails" post.id %}">{{ post.title }} </a>
                                 </h3><!-- /.blog-title -->
-                                <a href="blog-details-right.html" class="nisoz-btn">
+                                <a href="{% url "blog:postdetails" post.id %}" class="nisoz-btn">
                                     <span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span>
                                     <span class="nisoz-btn__text">Read More<span class="icon-right-arrow"></span></span>
                                 </a><!-- /.blog-read-more -->
                             </div><!-- /.blog-content -->
                         </div><!-- /.blog-card-one -->
                     </div>
-                                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="blog-one__item">
-                            <div class="blog-one__image">
-                                <img src="{% static 'assets/images/blog/blog-1-1.jpg' %} " alt="Five ways that can develop your business">
-                                <a href="blog-details-right.html"></a>
-                                <div class="blog-one__date">
-                                    <span>30</span>
-                                    June, 2023
-                                </div><!-- /.blog-date -->
-                            </div><!-- /.blog-image -->
-                            <div class="blog-one__content">
-                                <div class="blog-one__meta">
-                                    <div class="blog-one__meta__author">
-                                        <div class="blog-one__meta__thumb"><img src="{% static 'assets/images/blog/author-1.png' %} " alt="nisoz" /></div>
-                                        by<br><a href="blog-list-right.html">Layerdrops</a>
-                                    </div>
-                                    <span class="fas fa-comments"></span>2 Comments
-                                </div><!-- /.blog-meta -->
-                                <h3 class="blog-one__title">
-                                    <a href="blog-details-right.html">Five ways that can develop your business</a>
-                                </h3><!-- /.blog-title -->
-                                <a href="blog-details-right.html" class="nisoz-btn">
-                                    <span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span>
-                                    <span class="nisoz-btn__text">Read More<span class="icon-right-arrow"></span></span>
-                                </a><!-- /.blog-read-more -->
-                            </div><!-- /.blog-content -->
-                        </div><!-- /.blog-card-one -->
-                    </div>
-                                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="200ms">
-                        <div class="blog-one__item">
-                            <div class="blog-one__image">
-                                <img src="{% static 'assets/images/blog/blog-1-1.jpg' %} " alt="Five ways that can develop your business">
-                                <a href="blog-details-right.html"></a>
-                                <div class="blog-one__date">
-                                    <span>30</span>
-                                    June, 2023
-                                </div><!-- /.blog-date -->
-                            </div><!-- /.blog-image -->
-                            <div class="blog-one__content">
-                                <div class="blog-one__meta">
-                                    <div class="blog-one__meta__author">
-                                        <div class="blog-one__meta__thumb"><img src="{% static 'assets/images/blog/author-1.png' %} " alt="nisoz" /></div>
-                                        by<br><a href="blog-list-right.html">Layerdrops</a>
-                                    </div>
-                                    <span class="fas fa-comments"></span>2 Comments
-                                </div><!-- /.blog-meta -->
-                                <h3 class="blog-one__title">
-                                    <a href="blog-details-right.html">Five ways that can develop your business</a>
-                                </h3><!-- /.blog-title -->
-                                <a href="blog-details-right.html" class="nisoz-btn">
-                                    <span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span><span class="nisoz-btn__shape"></span>
-                                    <span class="nisoz-btn__text">Read More<span class="icon-right-arrow"></span></span>
-                                </a><!-- /.blog-read-more -->
-                            </div><!-- /.blog-content -->
-                        </div><!-- /.blog-card-one -->
-                    </div>
+                {% endfor %}  
                     
                 </div>
             </div>

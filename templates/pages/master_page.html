@@ -129,7 +129,7 @@
         <nav class="main-menu">
           <div class="container-fluid">
             <div class="main-menu__logo">
-              <a href="index.html">
+              <a href="{% url 'home_page:homepage' %}">
                 <img
                   src="{% static 'assets/images/logo-light.png' %}"
                   width="96"
@@ -232,7 +232,7 @@
           ><i class="fa fa-times"></i
         ></span>
         <div class="logo-box">
-          <a href="index.html" aria-label="logo image"
+          <a href="{% url 'home_page:homepage' %}" aria-label="logo image"
             ><img
               src="assets/images/logo-light.png"
               width="96"
